@@ -7,7 +7,7 @@ public class VolumeControl : MonoBehaviour
 {
     Slider volume_slider;
     [SerializeField]  AudioSource DJ_music;//MusicオブジェクトのAudioSourceコンポーネント取得
-    [SerializeField] float slider_speed = 20f;//スライダーの移動スピード
+    [SerializeField] float slider_speed = 40f;//スライダーの移動スピード
     
 
     void Start()

@@ -11,6 +11,7 @@ public class Degree_excite : MonoBehaviour
 
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Q))
+            transform.Rotate(new Vector3(0, 0, 1));
     }
 }
