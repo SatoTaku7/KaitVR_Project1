@@ -9,6 +9,8 @@ public class PlaySceneManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI text_A;
     [SerializeField] TextMeshProUGUI text_D;
     [SerializeField] Slider volume_slider;
+    [SerializeField] AudioSource DJ_music;//プレイヤーの操作する音楽
+    [SerializeField] AudioSource AudienceCheers;//成功時の観客の歓声
     void Start()
     {
         text_A.color = Color.red;//本当はカメラ・ライトの演出が入ってからテキストAが赤くなる　今回は最初からA
@@ -20,17 +22,21 @@ public class PlaySceneManager : MonoBehaviour
         {
             text_A.color = Color.white;
             text_D.color = Color.red;
+            AudienceCheers.Play();
         }
         if ((volume_slider.value == 100) && (text_D.color == Color.red))//スライダーが一番右まで来るかつDが赤→テキストDが白に戻り 歓声でスタート
         {
             text_D.color = Color.white;
+            AudienceCheers.Play();
             GameStart();
         }
         
 
     }
-    void GameStart()
+    void GameStart()//ゲーム開始時に呼び出される
     {
         Debug.Log("開始！");
+        DJ_music.Play();
+        
     }
 }
