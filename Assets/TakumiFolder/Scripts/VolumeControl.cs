@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class VolumeControl : MonoBehaviour
+public class VolumeControl : MonoBehaviour  //ADで下の音量バーを調節をし、音量に反映させます
 {
     Slider volume_slider;
     [SerializeField]  AudioSource DJ_music;//MusicオブジェクトのAudioSourceコンポーネント取得
