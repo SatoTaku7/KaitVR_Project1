@@ -782,6 +782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b6ce57c0705d364d95b8641feeddcb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSceneManager: {fileID: 1798455105}
 --- !u!1 &617997365
 GameObject:
   m_ObjectHideFlags: 0
@@ -2539,6 +2540,7 @@ MonoBehaviour:
   volume_slider: {fileID: 391060748}
   DJ_music: {fileID: 547015968}
   AudienceCheers: {fileID: 1243231605}
+  finish_tutorial: 0
 --- !u!4 &1798455106
 Transform:
   m_ObjectHideFlags: 0

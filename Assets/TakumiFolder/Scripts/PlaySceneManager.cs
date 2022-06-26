@@ -4,16 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class PlaySceneManager : MonoBehaviour
+public class PlaySceneManager : MonoBehaviour //チュートリアルでのA,Dを押させる指示・成功時の観客の歓声・VoliumeControlでのバーの調整を反映・
 {
     [SerializeField] TextMeshProUGUI text_A;
     [SerializeField] TextMeshProUGUI text_D;
     [SerializeField] Slider volume_slider;
     [SerializeField] AudioSource DJ_music;//プレイヤーの操作する音楽
     [SerializeField] AudioSource AudienceCheers;//成功時の観客の歓声
+    public bool finish_tutorial;
     void Start()
     {
         text_A.color = Color.red;//本当はカメラ・ライトの演出が入ってからテキストAが赤くなる　今回は最初からA
+        finish_tutorial = false;
     }
 
     void Update()
@@ -37,6 +39,7 @@ public class PlaySceneManager : MonoBehaviour
     {
         Debug.Log("開始！");
         DJ_music.Play();
+        finish_tutorial = true;
         
     }
 }
