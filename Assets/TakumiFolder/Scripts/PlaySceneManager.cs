@@ -12,27 +12,37 @@ public class PlaySceneManager : MonoBehaviour //ƒ`ƒ…[ƒgƒŠƒAƒ‹‚Å‚ÌA,D‚ğ‰Ÿ‚³‚¹‚é
     [SerializeField] AudioSource DJ_music;//ƒvƒŒƒCƒ„[‚Ì‘€ì‚·‚é‰¹Šy
     [SerializeField] AudioSource AudienceCheers;//¬Œ÷‚ÌŠÏ‹q‚ÌŠ½º
     public bool finish_tutorial;
+    public Degree_excite degree_Excite;//Šî€”’l‚ğŒÄ‚Ño‚·—p
     void Start()
     {
         text_A.color = Color.red;//–{“–‚ÍƒJƒƒ‰Eƒ‰ƒCƒg‚Ì‰‰o‚ª“ü‚Á‚Ä‚©‚çƒeƒLƒXƒgA‚ªÔ‚­‚È‚é@¡‰ñ‚ÍÅ‰‚©‚çA
         finish_tutorial = false;
+        //degree_Excite = GetComponent<Degree_excite>();
     }
 
     void Update()
     {
-        if ((volume_slider.value == 0) && (text_A.color == Color.red))//ƒXƒ‰ƒCƒ_[‚ªˆê”Ô¶‚Ü‚Å—ˆ‚é‚©‚ÂA‚ªÔ¨ƒeƒLƒXƒgA‚ª”’‚É–ß‚èAƒeƒLƒXƒgD‚ªÔ‚É‚È‚é@@Š½º‚à“ü‚ê‚Ä‚¨‚­H
+        Debug.Log(degree_Excite.clear_criteria);
+        if (text_A.color == Color.red)
         {
-            text_A.color = Color.white;
-            text_D.color = Color.red;
-            AudienceCheers.Play();
+            degree_Excite.clear_criteria = 0;
+            if (volume_slider.value == 0)//ƒXƒ‰ƒCƒ_[‚ªˆê”Ô¶‚Ü‚Å—ˆ‚é‚©‚ÂA‚ªÔ¨ƒeƒLƒXƒgA‚ª”’‚É–ß‚èAƒeƒLƒXƒgD‚ªÔ‚É‚È‚é@@Š½º‚à“ü‚ê‚Ä‚¨‚­H
+            {
+                text_A.color = Color.white;
+                text_D.color = Color.red;
+                AudienceCheers.Play();
+            }
         }
-        if ((volume_slider.value == 100) && (text_D.color == Color.red))//ƒXƒ‰ƒCƒ_[‚ªˆê”Ô‰E‚Ü‚Å—ˆ‚é‚©‚ÂD‚ªÔ¨ƒeƒLƒXƒgD‚ª”’‚É–ß‚è Š½º‚ÅƒXƒ^[ƒg
+        if (text_D.color == Color.red)
         {
-            text_D.color = Color.white;
-            AudienceCheers.Play();
-            GameStart();
+            degree_Excite.clear_criteria = 100;
+            if ((volume_slider.value == 100))//ƒXƒ‰ƒCƒ_[‚ªˆê”Ô‰E‚Ü‚Å—ˆ‚é‚©‚ÂD‚ªÔ¨ƒeƒLƒXƒgD‚ª”’‚É–ß‚è Š½º‚ÅƒXƒ^[ƒg
+            {
+                text_D.color = Color.white;
+                AudienceCheers.Play();
+                GameStart();
+            }
         }
-        
 
     }
     void GameStart()//ƒQ[ƒ€ŠJn‚ÉŒÄ‚Ño‚³‚ê‚é
