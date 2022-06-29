@@ -784,6 +784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clear_criteria: 0
   playerSceneManager: {fileID: 1798455105}
+  DJ_music: {fileID: 547015968}
   volume_slider: {fileID: 391060748}
 --- !u!1 &617997365
 GameObject:
