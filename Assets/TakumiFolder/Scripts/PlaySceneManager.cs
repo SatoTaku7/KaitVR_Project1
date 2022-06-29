@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+
 public class PlaySceneManager : MonoBehaviour //ƒ`ƒ…[ƒgƒŠƒAƒ‹‚Å‚ÌA,D‚ğ‰Ÿ‚³‚¹‚éw¦E¬Œ÷‚ÌŠÏ‹q‚ÌŠ½ºEVoliumeControl‚Å‚Ìƒo[‚Ì’²®‚ğ”½‰fE
 {
     [SerializeField] TextMeshProUGUI text_A;
@@ -13,16 +14,18 @@ public class PlaySceneManager : MonoBehaviour //ƒ`ƒ…[ƒgƒŠƒAƒ‹‚Å‚ÌA,D‚ğ‰Ÿ‚³‚¹‚é
     [SerializeField] AudioSource AudienceCheers;//¬Œ÷‚ÌŠÏ‹q‚ÌŠ½º
     public bool finish_tutorial;
     public Degree_excite degree_Excite;//Šî€”’l‚ğŒÄ‚Ño‚·—p
+    private float count;
     void Start()
     {
         text_A.color = Color.red;//–{“–‚ÍƒJƒƒ‰Eƒ‰ƒCƒg‚Ì‰‰o‚ª“ü‚Á‚Ä‚©‚çƒeƒLƒXƒgA‚ªÔ‚­‚È‚é@¡‰ñ‚ÍÅ‰‚©‚çA
         finish_tutorial = false;
+        count = 0;
         //degree_Excite = GetComponent<Degree_excite>();
     }
 
     void Update()
     {
-        Debug.Log(degree_Excite.clear_criteria);
+        //Debug.Log(degree_Excite.clear_criteria);
         if (text_A.color == Color.red)
         {
             degree_Excite.clear_criteria = 0;
@@ -41,8 +44,10 @@ public class PlaySceneManager : MonoBehaviour //ƒ`ƒ…[ƒgƒŠƒAƒ‹‚Å‚ÌA,D‚ğ‰Ÿ‚³‚¹‚é
                 text_D.color = Color.white;
                 AudienceCheers.Play();
                 GameStart();
+                
             }
         }
+        
 
     }
     void GameStart()//ƒQ[ƒ€ŠJn‚ÉŒÄ‚Ño‚³‚ê‚é
