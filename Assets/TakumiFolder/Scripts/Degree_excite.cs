@@ -12,6 +12,7 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
     private float criteria_span;//clear_criteriaの変わるランダムな時間
     private float count;//ゲーム開始後から時間計測
     private float finish_count;//78秒で終了させる
+    [SerializeField] AudioSource DJ_music;
     [SerializeField] Slider volume_slider;
     void Start()
     {
@@ -46,7 +47,7 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
             transform.Rotate(new Vector3(0, 0, 1));
         if (Input.GetKey(KeyCode.E) && transform.rotation.z <0.283f)
             transform.Rotate(new Vector3(0, 0, -1));
-        transform.rotation = Quaternion.Euler(0, 0, 120 - Mathf.Abs(Mathf.Pow(clear_criteria - volume_slider.value, 2) * 0.05f));
+        transform.rotation = Quaternion.Euler(0, 0, 120 - Mathf.Abs(Mathf.Pow(DJ_music.volume*100 - volume_slider.value, 2) * 0.05f));
         //transform.rotation = Quaternion.Euler(0, 0, Mathf.Clamp(transform.rotation.z, -36f, 130f));
          Debug.Log(this.gameObject.transform.rotation.z);
 
@@ -63,7 +64,7 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
         if ((count >= criteria_span)&&(count!=0))
         {
             criteria_span = Random.Range(2.5f, 6f);//2.5～6秒のスパンを決める
-            clear_criteria = Random.Range(0f, 100f);//ランダムで0～100の基準となる数値を決める
+            DJ_music.volume= Random.Range(0f, 100f)/100;//ランダムで0～1の基準となる数値を決める　少数何桁まで対応してるかわからんかったから100分の1したもう知らん
             Debug.Log("変更が行われます。criteria_span=" + criteria_span + ",clear_criteria=" + clear_criteria);
             count = 0;
         }

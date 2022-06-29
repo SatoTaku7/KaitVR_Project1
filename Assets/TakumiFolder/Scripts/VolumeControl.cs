@@ -22,7 +22,7 @@ public class VolumeControl : MonoBehaviour  //ADで下の音量バーを調節をし、音量に
     void Update()
     {
         
-        DJ_music.volume = volume_slider.value / 100;//音量は0～1なのでvolume_sliderの値100分の1に対応させた
+        //DJ_music.volume = volume_slider.value / 100;//音量は0～1なのでvolume_sliderの値100分の1に対応させた
         if (Input.GetKey(KeyCode.A))//Aを押している間はボリュームが落ちる
             volume_slider.value -= slider_speed*Time.deltaTime;
         if (Input.GetKey(KeyCode.D))//Dを押している間はボリュームが上がる
