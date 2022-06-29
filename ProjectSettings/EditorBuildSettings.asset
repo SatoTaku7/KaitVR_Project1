@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/TakumiFolder/Scenes/PlayScene.unity
+    guid: aca5253284cbdf24bbdf608bbbe4cfef
+  - enabled: 1
+    path: Assets/TakumiFolder/Scenes/Alter_Result.unity
+    guid: b51505c169794704986af1d40060dca2
+  - enabled: 1
+    path: Assets/TakumiFolder/Scenes/Alter_Start.unity
+    guid: 3b3aa48081604e74997855c6e5101da6
   m_configObjects: {}

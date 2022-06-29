@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映させる・盛り上がり度の計算をお
 {
@@ -10,11 +11,13 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
     public PlaySceneManager playerSceneManager;//PlaySceneManagerのfinish_tutorialがtrueになったらチュートリアル用の機能終了、盛り上がり度が活用される
     private float criteria_span;//clear_criteriaの変わるランダムな時間
     private float count;//ゲーム開始後から時間計測
+    private float finish_count;//78秒で終了させる
     [SerializeField] Slider volume_slider;
     void Start()
     {
         criteria_span = Random.Range(2.5f, 6f);
         count = 0;
+        finish_count = 0;
         Debug.Log(criteria_span);
     }
 
@@ -25,6 +28,12 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
         {
            // Debug.Log("チュートリアル終了");
             After_Tutorial();
+            finish_count += Time.deltaTime;
+            Debug.Log(finish_count);
+            if (finish_count > 78)//音楽終了後
+            {
+                SceneManager.LoadScene("Alter_Start");
+            }
         }
         else　
         {
