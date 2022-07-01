@@ -15,11 +15,13 @@ public class PlaySceneManager : MonoBehaviour //ƒ`ƒ…[ƒgƒŠƒAƒ‹‚Å‚ÌA,D‚ğ‰Ÿ‚³‚¹‚é
     public bool finish_tutorial;
     public Degree_excite degree_Excite;//Šî€”’l‚ğŒÄ‚Ño‚·—p
     private float count;
+    public bool AorD;//ƒ`ƒ…[ƒgƒŠƒAƒ‹‚ÅA‚ğw‚µ‚Ä‚¢‚é‚©D‚ğw‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©
     void Start()
     {
         text_A.color = Color.red;//–{“–‚ÍƒJƒƒ‰Eƒ‰ƒCƒg‚Ì‰‰o‚ª“ü‚Á‚Ä‚©‚çƒeƒLƒXƒgA‚ªÔ‚­‚È‚é@¡‰ñ‚ÍÅ‰‚©‚çA
         finish_tutorial = false;
         count = 0;
+        AorD = true;
         //degree_Excite = GetComponent<Degree_excite>();
     }
 
@@ -28,6 +30,7 @@ public class PlaySceneManager : MonoBehaviour //ƒ`ƒ…[ƒgƒŠƒAƒ‹‚Å‚ÌA,D‚ğ‰Ÿ‚³‚¹‚é
         //Debug.Log(degree_Excite.clear_criteria);
         if (text_A.color == Color.red)
         {
+            AorD = true;
             degree_Excite.clear_criteria = 0;
             if (volume_slider.value == 0)//ƒXƒ‰ƒCƒ_[‚ªˆê”Ô¶‚Ü‚Å—ˆ‚é‚©‚ÂA‚ªÔ¨ƒeƒLƒXƒgA‚ª”’‚É–ß‚èAƒeƒLƒXƒgD‚ªÔ‚É‚È‚é@@Š½º‚à“ü‚ê‚Ä‚¨‚­H
             {
@@ -38,6 +41,7 @@ public class PlaySceneManager : MonoBehaviour //ƒ`ƒ…[ƒgƒŠƒAƒ‹‚Å‚ÌA,D‚ğ‰Ÿ‚³‚¹‚é
         }
         if (text_D.color == Color.red)
         {
+            AorD = false;
             degree_Excite.clear_criteria = 100;
             if ((volume_slider.value == 100))//ƒXƒ‰ƒCƒ_[‚ªˆê”Ô‰E‚Ü‚Å—ˆ‚é‚©‚ÂD‚ªÔ¨ƒeƒLƒXƒgD‚ª”’‚É–ß‚è Š½º‚ÅƒXƒ^[ƒg
             {
