@@ -22,7 +22,6 @@ public class PlaySceneManager : MonoBehaviour //ƒ`ƒ…[ƒgƒŠƒAƒ‹‚Å‚ÌA,D‚ğ‰Ÿ‚³‚¹‚é
         finish_tutorial = false;
         count = 0;
         AorD = true;
-        //degree_Excite = GetComponent<Degree_excite>();
     }
 
     void Update()
