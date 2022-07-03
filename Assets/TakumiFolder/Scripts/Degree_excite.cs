@@ -61,10 +61,10 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
         if ((count >= criteria_span)&&(count!=0))
         {
             criteria_span = Random.Range(2.5f, 6f);//2.5～6秒のスパンを決める
-            DJ_music.volume= Random.Range(0f, 100f)/100;//ランダムで0～1の基準となる数値を決める　少数何桁まで対応してるかわからんかったから100分の1したもう知らん
+            DJ_music.volume= Random.Range(0f, 100f)/100;//ランダムで0～1の基準となる数値を決める　
             count = 0;
         }
-        Debug.Log(excitement);//Mathf.Abs(clear_criteria - volume_slider.value)*1.2f
+        Debug.Log(excitement);
     }
 
 
