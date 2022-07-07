@@ -178,7 +178,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_DJ
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4512798577338460066, guid: 938341d8de1064a989ee8488a78e7514, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 938341d8de1064a989ee8488a78e7514, type: 3}
 --- !u!1 &24045360
 GameObject:
@@ -314,6 +315,30 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &42626280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5011096336096449723, guid: 938341d8de1064a989ee8488a78e7514, type: 3}
+  m_PrefabInstance: {fileID: 13885868}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &42626281
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42626280}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c520b79f7eb2c24090f232320a82e5e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &134841909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -321,6 +346,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1159401584}
     m_Modifications:
+    - target: {fileID: 781496755523605058, guid: 6abff2f661a604892a548796ce384a3e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3252415940128315526, guid: 6abff2f661a604892a548796ce384a3e, type: 3}
       propertyPath: m_Name
       value: body_root_67
@@ -455,6 +484,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143909040}
   m_CullTransparentMesh: 1
+--- !u!1 &303403630 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 230064261852950260, guid: 0fc7a3bbe62de478ebbbcada19cd8a00, type: 3}
+  m_PrefabInstance: {fileID: 1453892120}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &303403631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303403630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 494677f4ec77a1843a5050894ac0089a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  degree_Excite: {fileID: 611108978}
 --- !u!1 &391060746
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,6 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d10cbe76fac71949b793fe5502320ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player_DJ: {fileID: 42626280}
   DJ_music: {fileID: 547015968}
   slider_speed: 40
 --- !u!1 &547015966
@@ -1937,12 +1985,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 230064261852950260, guid: 0fc7a3bbe62de478ebbbcada19cd8a00, type: 3}
       propertyPath: m_Name
-      value: body_root_38
+      value: audience1
       objectReference: {fileID: 0}
     - target: {fileID: 230064261852950260, guid: 0fc7a3bbe62de478ebbbcada19cd8a00, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2229628115831338466, guid: 0fc7a3bbe62de478ebbbcada19cd8a00, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229628115831338466, guid: 0fc7a3bbe62de478ebbbcada19cd8a00, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5d9884de41d1976458d8c65a9ba14e79, type: 2}
     - target: {fileID: 2616217268227495438, guid: 0fc7a3bbe62de478ebbbcada19cd8a00, type: 3}
       propertyPath: m_RootOrder
       value: 3
