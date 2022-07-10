@@ -19,17 +19,15 @@ public class Audience_Anim : MonoBehaviour
 
     void Update()
     {
-        //Audience_anim.SetInteger("Animationnum", (int)Animationnum.Lying);
-        //if (degree_Excite.excitement < 20)
-        //    Audience_anim.SetInteger("Animationnum", (int)Animationnum.Lying);
-       
-        //else if (20<=degree_Excite.excitement&& degree_Excite.excitement < 60)
-        //    Audience_anim.SetInteger("Animationnum", (int)Animationnum.Idle);
-        
-        //else Audience_anim.SetInteger("Animationnum", (int)Animationnum.Jump);
+        Audience_anim.SetInteger("Animationnum", (int)Animationnum.Lying);
+        if (degree_Excite.excitement < 30)
+            Audience_anim.SetInteger("Animationnum", (int)Animationnum.Lying);
 
-        if(Input.GetKeyDown(KeyCode.X)) Audience_anim.SetInteger("Animationnum", (int)Animationnum.Jump);
+        if (30 <= degree_Excite.excitement && degree_Excite.excitement < 80)
+            Audience_anim.SetInteger("Animationnum", (int)Animationnum.Idle);
 
-       // Debug.Log(degree_Excite.excitement);
+        if (degree_Excite.excitement >= 80)
+            Audience_anim.SetInteger("Animationnum", (int)Animationnum.Jump);
+         
     }
 }
