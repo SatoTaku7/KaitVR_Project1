@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/TakumiFolder/Scenes/Alter_Start.unity
     guid: 3b3aa48081604e74997855c6e5101da6
+  - enabled: 1
+    path: Assets/Yamamoto/StartScene.unity
+    guid: 3e6d895d4146f284dae6d833bc83236b
   m_configObjects: {}
