@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Yamamoto/StartScene.unity
     guid: 3e6d895d4146f284dae6d833bc83236b
+  - enabled: 1
+    path: Assets/SasakiFolder/KariRestartScene.unity
+    guid: 8d5c2d9cbec051d41adcc9179ecda04d
+  - enabled: 1
+    path: Assets/SasakiFolder/KariRetitleScene.unity
+    guid: 9f91e11564a6b3e49965edfddf2d76d6
   m_configObjects: {}
