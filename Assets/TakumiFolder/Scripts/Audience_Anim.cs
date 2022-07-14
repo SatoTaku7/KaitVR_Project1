@@ -6,6 +6,7 @@ public class Audience_Anim : MonoBehaviour
 {
     private Animator Audience_anim;
     public Degree_excite degree_Excite;
+    [SerializeField] GameObject Player;
     private enum Animationnum
     {
         Idle = 10,
@@ -15,6 +16,7 @@ public class Audience_Anim : MonoBehaviour
     void Start()
     {
         Audience_anim = gameObject.GetComponent<Animator>();
+        transform.LookAt(Player.transform);
     }
 
     void Update()
