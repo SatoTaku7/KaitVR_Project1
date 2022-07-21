@@ -347,8 +347,9 @@ GameObject:
   - component: {fileID: 320277534}
   - component: {fileID: 320277536}
   - component: {fileID: 320277535}
+  - component: {fileID: 320277537}
   m_Layer: 5
-  m_Name: Text
+  m_Name: tx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -415,6 +416,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320277533}
   m_CullTransparentMesh: 1
+--- !u!114 &320277537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320277533}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e5c786f7b423d4ea4e2618558bd020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tx: {fileID: 320277535}
 --- !u!1 &393037206
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,7 +440,7 @@ GameObject:
   - component: {fileID: 393037207}
   - component: {fileID: 393037208}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: RestartObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -831,7 +845,7 @@ GameObject:
   - component: {fileID: 1680931172}
   - component: {fileID: 1680931171}
   m_Layer: 0
-  m_Name: ScoreManager
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -875,7 +889,7 @@ GameObject:
   - component: {fileID: 1735582393}
   - component: {fileID: 1735582394}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: RetitleObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1048,10 +1062,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
