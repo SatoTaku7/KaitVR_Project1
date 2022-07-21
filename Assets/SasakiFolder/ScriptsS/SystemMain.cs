@@ -9,10 +9,9 @@ public class SystemMain : MonoBehaviour
     public Text ScoreText;
     public ScoreData Sd;
 
-    // Start is called before the first frame update
     void Start()
     {
-        Score = 0;
+        Score = 1;
         //ScoreDataを見つける。(前シーンでDontDestroyOnLoadの記述をしたため、GameMainでも保持していられる)
         Sd = GameObject.Find("ScoreData").GetComponent<ScoreData>();
     }
