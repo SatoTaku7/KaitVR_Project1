@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/TakumiFolder/Scenes/Alter_Start.unity
     guid: 3b3aa48081604e74997855c6e5101da6
+  - enabled: 1
+    path: Assets/WatanabeFolder/OptionScene.unity
+    guid: 94fd4044bee7c3d4aa4bae04b03345a6
+  - enabled: 1
+    path: Assets/WatanabeFolder/Ren_Scene.unity
+    guid: 5f7571356ecb7554392d0577ab9f007b
   m_configObjects: {}
