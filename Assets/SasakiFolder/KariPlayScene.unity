@@ -171,10 +171,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 183058557}
   - component: {fileID: 183058556}
   m_Layer: 0
-  m_Name: gameObject
+  m_Name: ScoreData
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8435da41c11a3443ada5374c6724984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: 0
+  Score: 99
 --- !u!4 &183058557
 Transform:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 260407241}
   - component: {fileID: 260407240}
   m_Layer: 5
-  m_Name: GoR Button
+  m_Name: Go Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,7 +305,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -104.5, y: -110.5}
+  m_AnchoredPosition: {x: -88, y: -110.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &260407240
@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 359094675}
   - component: {fileID: 359094674}
   m_Layer: 5
-  m_Name: Text
+  m_Name: karitext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -437,7 +437,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 250, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &359094674
 MonoBehaviour:
@@ -472,7 +472,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 111
+  m_Text: "\u4EEE\u306E\u30B9\u30BF\u30FC\u30C8\u753B\u9762"
 --- !u!222 &359094675
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -756,7 +756,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: "\u4EEE\u306E\u30D7\u30EC\u30A4\u30B7\u30FC\u30F3\uFF12\u30D8"
 --- !u!222 &1441316162
 CanvasRenderer:
   m_ObjectHideFlags: 0

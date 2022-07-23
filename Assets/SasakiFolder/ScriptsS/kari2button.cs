@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class restart : MonoBehaviour
+public class kari2button : MonoBehaviour
 {
+    // Start is called before the first frame update
     public void ButtonClicked()
     {
-        SceneManager.LoadScene("KariPlayScene2");
+        SceneManager.LoadScene("ResultScene");
     }
 }
