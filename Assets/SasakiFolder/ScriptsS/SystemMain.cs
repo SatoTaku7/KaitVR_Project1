@@ -7,19 +7,21 @@ public class SystemMain : MonoBehaviour
 {
     public int Score;
     public Text ScoreText;
-    public ScoreData Sd;
+    public scoreData Sd;
 
     void Start()
     {
-        Score = 1;
+        Score = 0;
         //ScoreDataを見つける。(前シーンでDontDestroyOnLoadの記述をしたため、GameMainでも保持していられる)
-        Sd = GameObject.Find("ScoreData").GetComponent<ScoreData>();
+        Sd = GameObject.Find("ScoreData").GetComponent<scoreData>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ScoreText.text = string.Format("{0}", Score);  //GameMainシーンでのスコア表示
         Sd.Score = Score;  //ScoreDataの中のScore
+        ScoreText.text = string.Format("スコア：{0}", Score);  //GameMainシーンでのスコア表示
+        Score += 1;
+        
     }
 }
