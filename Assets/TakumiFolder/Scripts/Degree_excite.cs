@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映させる・盛り上がり度の計算をお
 {
@@ -16,6 +17,10 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
     private float score;
     [SerializeField] AudioSource DJ_music;
     [SerializeField] Slider volume_slider;
+    [SerializeField] GameObject Oikawa_PostPro;
+    [SerializeField] float rotate_speed;//針の移動スピード
+    private PostProcessVolume postProcessVolume;
+
     void Start()
     {
         criteria_span = Random.Range(2.5f, 6f);
@@ -24,11 +29,15 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
         score_Time = 0;
         score = 0;
         Debug.Log(criteria_span);
+        postProcessVolume = Oikawa_PostPro.GetComponent<PostProcessVolume>();
+       
+
     }
 
     void Update()
     {
         excitement =101- Mathf.Abs(DJ_music.volume * 100 - volume_slider.value);//盛り上がり度
+        
         if (playerSceneManager.finish_tutorial) //チュートリアル後
         {
            // Debug.Log("チュートリアル終了");
@@ -53,7 +62,7 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
             else
                 DJ_music.volume = 100;
         }
-        transform.rotation = Quaternion.Euler(0, 0, excitement*1.45f);
+        transform.rotation =Quaternion.Lerp(transform.rotation,Quaternion.Euler(0, 0, excitement*1.45f),rotate_speed*Time.deltaTime);
     }
 
     void Tutorial()
@@ -71,6 +80,7 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
             count = 0;
         }
         Debug.Log(excitement);
+
     }
 
 
