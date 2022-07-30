@@ -30,7 +30,9 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
         finish_count = 0;
         score_Time = 0;
         score = 0;
-        scoreData = GameObject.Find("ScoreData").GetComponent <scoreData> ();
+        if(SceneManager.GetActiveScene().name=="PlayScene")
+            scoreData = GameObject.Find("ScoreData").GetComponent <scoreData> ();
+
         //Debug.Log(criteria_span);
         postProcessVolume = Oikawa_PostPro.GetComponent<PostProcessVolume>();
        
@@ -40,8 +42,9 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
     void Update()
     {
         excitement =101- Mathf.Abs(DJ_music.volume * 100 - volume_slider.value);//盛り上がり度
-        scoreText.text = scoreData.Score.ToString();
-        Debug.Log(scoreData.Score);
+        if (SceneManager.GetActiveScene().name == "PlayScene")
+            scoreText.text = scoreData.Score.ToString();
+        
         if (playerSceneManager.finish_tutorial) //チュートリアル後
         {
            // Debug.Log("チュートリアル終了");
@@ -54,7 +57,8 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
             }
             if (score_Time > 1)
             {
-                scoreData.Score += (int)excitement / 10;
+                if (SceneManager.GetActiveScene().name == "PlayScene")
+                    scoreData.Score += (int)excitement / 10;
                 score_Time = 0;
             }
         }
