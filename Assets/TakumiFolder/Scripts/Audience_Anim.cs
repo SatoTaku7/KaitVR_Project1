@@ -87,7 +87,7 @@ public class Audience_Anim : MonoBehaviour
         Audience_anim.SetInteger("Animationnum", (int)Animationnum.Idle);
         if (jump_time > 1)
         {
-            Debug.Log(jump_time);
+            //Debug.Log(jump_time);
             rb.AddForce(new Vector3(0, 2f, 0), ForceMode.Impulse);
             jump_time = 0;
         }
@@ -100,7 +100,7 @@ public class Audience_Anim : MonoBehaviour
         //transform.LookAt(Player.transform);
         if (jump_time > 1)
         {
-            Debug.Log(jump_time);
+            //Debug.Log(jump_time);
             rb.AddForce(new Vector3(0, 3f, 0), ForceMode.Impulse);
             jump_time = 0;
         }

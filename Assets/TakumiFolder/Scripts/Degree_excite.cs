@@ -19,6 +19,8 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
     [SerializeField] Slider volume_slider;
     [SerializeField] GameObject Oikawa_PostPro;
     [SerializeField] float rotate_speed;//針の移動スピード
+    scoreData scoreData;
+    [SerializeField] Text scoreText;
     private PostProcessVolume postProcessVolume;
 
     void Start()
@@ -28,7 +30,8 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
         finish_count = 0;
         score_Time = 0;
         score = 0;
-        Debug.Log(criteria_span);
+        scoreData = GameObject.Find("ScoreData").GetComponent <scoreData> ();
+        //Debug.Log(criteria_span);
         postProcessVolume = Oikawa_PostPro.GetComponent<PostProcessVolume>();
        
 
@@ -37,7 +40,8 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
     void Update()
     {
         excitement =101- Mathf.Abs(DJ_music.volume * 100 - volume_slider.value);//盛り上がり度
-        
+        scoreText.text = scoreData.Score.ToString();
+        Debug.Log(scoreData.Score);
         if (playerSceneManager.finish_tutorial) //チュートリアル後
         {
            // Debug.Log("チュートリアル終了");
@@ -46,11 +50,11 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
             score_Time += Time.deltaTime;
             if (finish_count > 78)//音楽終了後
             {
-                SceneManager.LoadScene("Alter_Start");
+                SceneManager.LoadScene("ResultScene");
             }
             if (score_Time > 1)
             {
-                score+= excitement / 10;
+                scoreData.Score += (int)excitement / 10;
                 score_Time = 0;
             }
         }
@@ -63,11 +67,6 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
                 DJ_music.volume = 100;
         }
         transform.rotation =Quaternion.Lerp(transform.rotation,Quaternion.Euler(0, 0, excitement*1.45f),rotate_speed*Time.deltaTime);
-    }
-
-    void Tutorial()
-    {
-
     }
 
     void After_Tutorial()
