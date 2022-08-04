@@ -21,6 +21,8 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
     [SerializeField] float rotate_speed;//針の移動スピード
     scoreData scoreData;
     [SerializeField] Text scoreText;
+    [SerializeField] GameObject Para;//パラメーターの画像
+    Image para_image;
     private PostProcessVolume postProcessVolume;
 
     void Start()
@@ -30,8 +32,13 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
         finish_count = 0;
         score_Time = 0;
         score = 0;
-        if(SceneManager.GetActiveScene().name=="PlayScene")
-            scoreData = GameObject.Find("ScoreData").GetComponent <scoreData> ();
+
+        if (SceneManager.GetActiveScene().name == "PlayScene")
+        {
+            scoreData = GameObject.Find("ScoreData").GetComponent<scoreData>();
+            para_image = Para.GetComponent<Image>();
+        }
+            
 
         //Debug.Log(criteria_span);
         postProcessVolume = Oikawa_PostPro.GetComponent<PostProcessVolume>();
@@ -43,6 +50,11 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
     {
         excitement =101- Mathf.Abs(DJ_music.volume * 100 - volume_slider.value);//盛り上がり度
         if (SceneManager.GetActiveScene().name == "PlayScene")
+        {
+            para_image.color = new Color32(255, (byte)(255 - (excitement * 2)), 125, 255);
+        }
+        
+        if (SceneManager.GetActiveScene().name == "PlayScene")
             scoreText.text = scoreData.Score.ToString();
         
         if (playerSceneManager.finish_tutorial) //チュートリアル後
@@ -51,7 +63,7 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
             After_Tutorial();
             finish_count += Time.deltaTime;
             score_Time += Time.deltaTime;
-            if (finish_count > 78)//音楽終了後
+            if (finish_count > 78)//音楽終了後 (78)
             {
                 SceneManager.LoadScene("ResultScene");
             }
@@ -70,15 +82,26 @@ public class Degree_excite : MonoBehaviour  //盛り上がり度をパラメーターに反映さ
             else
                 DJ_music.volume = 100;
         }
-        transform.rotation =Quaternion.Lerp(transform.rotation,Quaternion.Euler(0, 0, excitement*1.45f),rotate_speed*Time.deltaTime);
+        transform.rotation =Quaternion.Lerp(transform.rotation,Quaternion.Euler(0, 0, excitement*2.1f),rotate_speed*Time.deltaTime);
     }
 
     void After_Tutorial()
     {
         count += Time.deltaTime;
-        if ((count >= criteria_span)&&(count!=0))
+        if ((count >= criteria_span) && (count != 0))
         {
-            criteria_span = Random.Range(2.5f, 6f);//2.5～6秒のスパンを決める
+            if(finish_count < 20)
+            {
+                criteria_span = Random.Range(3.5f, 6.0f);//2.5～6秒のスパンを決める
+            }
+            else if (20 <= finish_count && finish_count < 50)
+            {
+                criteria_span = Random.Range(2.5f, 4.0f);//2.5～6秒のスパンを決める
+            }
+            else
+            {
+                criteria_span = Random.Range(0.75f, 2.5f);//2.5～6秒のスパンを決める
+            }
             DJ_music.volume= Random.Range(0f, 100f)/100;//ランダムで0～1の基準となる数値を決める　
             count = 0;
         }

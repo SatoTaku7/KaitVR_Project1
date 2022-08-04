@@ -7,6 +7,7 @@ public class restart : MonoBehaviour
 {
     public void ButtonClicked()
     {
-        SceneManager.LoadScene("KariPlayScene2");
+        SceneManager.LoadScene("PlayScene");
+        Destroy(GameObject.Find("ScoreData"));
     }
 }

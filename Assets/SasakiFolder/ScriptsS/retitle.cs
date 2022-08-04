@@ -7,6 +7,7 @@ public class retitle : MonoBehaviour
 {
     public void ButtonClicked()
     {
-        SceneManager.LoadScene("KariRetitleScene");
+        SceneManager.LoadScene("StartScene");
+        Destroy(GameObject.Find("ScoreData"));
     }
 }
