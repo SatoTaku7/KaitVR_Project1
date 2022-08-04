@@ -10,8 +10,8 @@ public class PlaySceneManager : MonoBehaviour //ƒ`ƒ…[ƒgƒŠƒAƒ‹‚Å‚ÌA,D‚ğ‰Ÿ‚³‚¹‚é
     [SerializeField] TextMeshProUGUI text_A;
     [SerializeField] TextMeshProUGUI text_D;
     [SerializeField] Slider volume_slider;
-    [SerializeField] AudioSource DJ_music;//ƒvƒŒƒCƒ„[‚Ì‘€ì‚·‚é‰¹Šy
-    [SerializeField] AudioSource AudienceCheers;//¬Œ÷‚ÌŠÏ‹q‚ÌŠ½º
+    public AudioSource DJ_music;//ƒvƒŒƒCƒ„[‚Ì‘€ì‚·‚é‰¹Šy
+    public AudioSource AudienceCheers;//¬Œ÷‚ÌŠÏ‹q‚ÌŠ½º
     public bool finish_tutorial;
     public Degree_excite degree_Excite;//Šî€”’l‚ğŒÄ‚Ño‚·—p
     private float count;
@@ -50,8 +50,6 @@ public class PlaySceneManager : MonoBehaviour //ƒ`ƒ…[ƒgƒŠƒAƒ‹‚Å‚ÌA,D‚ğ‰Ÿ‚³‚¹‚é
                 
             }
         }
-        
-
     }
     void GameStart()//ƒQ[ƒ€ŠJn‚ÉŒÄ‚Ño‚³‚ê‚é
     {

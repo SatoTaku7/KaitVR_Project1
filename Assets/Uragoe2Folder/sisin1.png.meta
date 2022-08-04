@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f65f0bd52db2b3a4e9601881c74008a5
+guid: 4833a247f59d0d04c82df4942da3c270
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5210992167689647269
-    second: haguruma_0
+      213: 4335736129272793997
+    second: sisin1_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -44,11 +44,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+  spritePivot: {x: 0.4935588, y: 0.4886157}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -94,22 +94,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: haguruma_0
+      name: sisin1_0
       rect:
         serializedVersion: 2
-        x: 419
-        y: 137
-        width: 907
-        height: 905
+        x: 517
+        y: 248
+        width: 629
+        height: 630
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5b04858b36dea7b0800000000000000
-      internalID: -5210992167689647269
+      spriteID: d8bc121b901ab2c30800000000000000
+      internalID: 4335736129272793997
       vertices: []
       indices: 
       edges: []
